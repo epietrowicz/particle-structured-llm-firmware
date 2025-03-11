@@ -1,0 +1,10 @@
+{
+    "extensions.ignoreRecommendations": true,
+    "C_Cpp.default.configurationProvider": "particle.particle-vscode-core",
+    "files.associations": {
+        "*.ino": "cpp"
+    },
+    "editor.formatOnSave": true,
+    "particle.targetPlatform": "b5som",
+    "particle.firmwareVersion": "6.3.0"
+}
