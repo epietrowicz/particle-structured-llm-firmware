@@ -29,7 +29,7 @@ void loop()
 {
   while (Serial1.available())
   {
-    // {"temperature": 22.5, "humidity": 60, "status": "ok"}
+    // {"lights": 50, "window": 20, "temperature": 30, "fan": 0}
     String incoming = Serial1.readString();
     Log.info("Received: %s", incoming.c_str());
     JSONValue json = JSONValue::parseCopy(incoming.c_str());
@@ -43,15 +43,20 @@ void loop()
           Log.info("Temperature: %s", (const char *)iter.value().toString());
           data.set("temperature", iter.value().toDouble());
         }
-        else if (iter.name() == "humidity")
+        else if (iter.name() == "lights")
         {
-          Log.info("Humidity: %s", (const char *)iter.value().toString());
-          data.set("humidity", iter.value().toDouble());
+          Log.info("Lights: %s", (const char *)iter.value().toString());
+          data.set("lights", iter.value().toDouble());
         }
-        else if (iter.name() == "status")
+        else if (iter.name() == "window")
         {
-          Log.info("Status: %s", (const char *)iter.value().toString());
-          data.set("status", (const char *)iter.value().toString());
+          Log.info("Window: %s", (const char *)iter.value().toString());
+          data.set("window", (const char *)iter.value().toString());
+        }
+        else if (iter.name() == "fan")
+        {
+          Log.info("Fan: %s", (const char *)iter.value().toString());
+          data.set("fan", (const char *)iter.value().toString());
         }
       }
       newData = true;
