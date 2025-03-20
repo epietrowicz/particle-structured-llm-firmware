@@ -15,3 +15,5 @@ The LLM will respond to a voice command such as "it's too cold in here" with an 
 ```
 
 The system state is then forwarded to a [Particle Ledger](https://www.particle.io/ledger-and-logic/) instance over LTE to be fetched by an end application. 
+
+![configuration](https://github.com/user-attachments/assets/8f68238e-e946-42d4-80fe-389cd984e4cc)
