@@ -64,7 +64,7 @@ void loop()
   }
   if (newData)
   {
-    statusLedger.set(data, particle::Ledger::MERGE);
+    statusLedger.set(data, particle::Ledger::REPLACE);
     Log.info("Updating Ledger: %s", data.toJSON().c_str());
     newData = false;
   }
